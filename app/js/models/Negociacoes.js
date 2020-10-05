@@ -3,9 +3,9 @@ class Negociacoes {
         this.negociacoes = [];
     }
     adiciona(negociacao) {
-        return this.negociacoes.push(negociacao);
+        this.negociacoes.push(negociacao);
     }
     paraArray() {
-        return this.negociacoes;
+        return [].concat(this.negociacoes);
     }
 }
