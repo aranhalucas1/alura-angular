@@ -1,12 +1,6 @@
 class Negociacao {
-    private data;
-    private quantidade;
-    private valor;
 
-    constructor(data, quantidade, valor) {
-        this.data = data;
-        this.quantidade = quantidade;
-        this.valor = valor;
+    constructor(private data: Date, private quantidade: number, private valor: number) {
     }
 
     get getData() {
