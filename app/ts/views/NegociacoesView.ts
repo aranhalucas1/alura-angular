@@ -6,11 +6,11 @@ class NegociacoesView {
         this.elemento = document.querySelector(seletor);
     }
 
-    update(): void {
-        this.elemento.innerHTML = this.template();
+    update(model: Negociacoes): void {
+        this.elemento.innerHTML = this.template(model);
     }
 
-    template(): string {
+    template(model: Negociacoes): string {
 
         return `
         
@@ -25,6 +25,19 @@ class NegociacoesView {
         </thead>
         
         <tbody>
+        ${model.paraArray().map(negociacoes => 
+            `
+            <tr>
+                <td>${negociacoes.getData.getDate()}/${negociacoes.getData.getMonth()}/${negociacoes.getData.getFullYear()}</td>
+                <td>${negociacoes.getQuantidade}</td>
+                <td>${negociacoes.getValor}</td>
+                <td>${negociacoes.volume}</td>  
+            </tr>
+            
+            `
+            
+            ).join('')}
+            
         </tbody>
         
         <tfoot>
